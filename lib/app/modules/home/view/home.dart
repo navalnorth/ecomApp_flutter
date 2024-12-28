@@ -1,7 +1,8 @@
 import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
-import 'package:ecom_app/app/modules/home/controller/connexion/view/login.dart';
+import 'package:ecom_app/app/modules/connexion/view/login.dart';
+import 'package:ecom_app/app/modules/inscription/view/inscription.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,12 @@ class Home extends StatelessWidget {
             h(40),
             Image.asset("assets/images/home.png"),
             h(40),
-            ButtonComponent(textButton: "S'inscrire", buttonColor: mainColor, buttonColorText: Colors.white,),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Inscription()));
+              },
+              child: ButtonComponent(textButton: "S'inscrire", buttonColor: mainColor, buttonColorText: Colors.white,)
+            ),
             h(40),
             InkWell(
               onTap: () {

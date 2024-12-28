@@ -17,8 +17,8 @@ class FormComponent extends StatelessWidget {
         border: OutlineInputBorder(),
         suffixIcon: hide ? Icon(Icons.remove_red_eye_rounded) : null
       ),
-      keyboardType: TextInputType.emailAddress,
-      obscureText: true,
+      keyboardType: textInputType,
+      obscureText: hide,
     );
   }
   

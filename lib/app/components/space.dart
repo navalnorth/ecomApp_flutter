@@ -8,6 +8,6 @@ h(double h){
 
 w(double w){
   return SizedBox(
-    height: w,
+    width: w,
   );
 }
