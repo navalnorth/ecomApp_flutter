@@ -8,6 +8,7 @@ class TextComponents extends StatelessWidget {
   final FontWeight fw;
   final TextAlign textAlign;
   final String txt;
+  final String family;
 
   TextComponents({
     required this.txt,
@@ -15,6 +16,7 @@ class TextComponents extends StatelessWidget {
     this.textSize=16,
     this.fw=FontWeight.bold,
     this.textAlign=TextAlign.left,
+    this.family="Regular"
   });
 
   @override
@@ -22,6 +24,7 @@ class TextComponents extends StatelessWidget {
     return Text(
       txt, 
       style: TextStyle(
+        fontFamily: family,
        color: color,
         fontSize: textSize,
         fontWeight: fw

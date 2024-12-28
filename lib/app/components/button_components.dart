@@ -10,7 +10,7 @@ class ButtonComponent extends StatelessWidget {
   ButtonComponent({
     required this.textButton,
     required this.buttonColor,
-    required this.buttonColorText,
+    this.buttonColorText=Colors.white
   });
 
   @override
