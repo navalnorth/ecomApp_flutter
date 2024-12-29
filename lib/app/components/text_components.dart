@@ -25,7 +25,7 @@ class TextComponents extends StatelessWidget {
       txt, 
       style: TextStyle(
         fontFamily: family,
-       color: color,
+        color: color,
         fontSize: textSize,
         fontWeight: fw
       ),

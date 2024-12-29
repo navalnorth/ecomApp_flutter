@@ -2,6 +2,7 @@ import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/form_component.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
+import 'package:ecom_app/app/modules/motDePasseOublie/view/forgot_password.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,12 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextComponents(txt: 'Se Rappeler de moi', color: Colors.grey, textSize: 12,),
-                  TextComponents(txt: 'Mot de Passe Oublié', color: Colors.blue, textSize: 12,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
+                    },
+                    child: TextComponents(txt: 'Mot de Passe Oublié', color: Colors.blue, textSize: 12,)
+                  ),
                 ],
               ),
         
