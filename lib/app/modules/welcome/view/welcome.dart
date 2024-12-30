@@ -1,6 +1,7 @@
 import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
+import 'package:ecom_app/app/modules/ProductsPage/view/product_page.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,12 @@ class _WelcomeState extends State<Welcome> {
             h(40),
             Image.asset("assets/images/welcome.png"),
             h(40),
-            ButtonComponent(textButton: "Commencer", buttonColor: mainColor)
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductPage()));
+              },
+              child: ButtonComponent(textButton: "Commencer", buttonColor: mainColor)
+            )
           ],
         ),
       ),
