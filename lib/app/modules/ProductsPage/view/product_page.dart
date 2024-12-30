@@ -47,6 +47,7 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   ),
                 ),
+
                 CircleAvatar(
                   backgroundColor: greyColor,
                   radius: 30,
@@ -57,6 +58,7 @@ class _ProductPageState extends State<ProductPage> {
               ],
             ),
             h(40),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -110,6 +112,7 @@ class _ProductPageState extends State<ProductPage> {
               ],
             ),
             h(30),
+
             Container(
               height: 200,
               width: double.infinity,
@@ -123,6 +126,7 @@ class _ProductPageState extends State<ProductPage> {
             ),
             ),
             h(20),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -131,6 +135,7 @@ class _ProductPageState extends State<ProductPage> {
               ],
             ),
             h(20),
+
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -141,7 +146,27 @@ class _ProductPageState extends State<ProductPage> {
                 CategoryBox("Pyjama"),
                 CategoryBox("Manteaux"),
                 CategoryBox("Accessoires"),
-              ],),
+              ],
+              ),
+            ),
+            h(30),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                TextComponents(txt: "Tous les produits", family: 'Bold', fw: FontWeight.bold,),
+              ],
+            ),
+            h(20),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: List.generate(6, (index) {
+                return Container(
+                  width: (MediaQuery.of(context).size.width/2)-20,
+                  child: ProductBox("Panjabi", "13 reviews", "30€", "40€"),
+                );
+              }),
             )
           ],
         ),

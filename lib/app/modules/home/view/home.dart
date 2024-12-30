@@ -1,6 +1,7 @@
 import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
+import 'package:ecom_app/app/modules/ProductsPage/view/product_page.dart';
 import 'package:ecom_app/app/modules/connexion/view/login.dart';
 import 'package:ecom_app/app/modules/inscription/view/inscription.dart';
 import 'package:ecom_app/utils/colors.dart';
@@ -42,7 +43,12 @@ class Home extends StatelessWidget {
                 child: ButtonComponent(textButton: "Se Conncecter", buttonColor: loginButtonColor, buttonColorText: Colors.black,)
               ),
               h(20),
-              TextComponents(txt: "Non Merci")
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProductPage()));
+                },
+                child: TextComponents(txt: "Non Merci")
+              )
             ],
           ),
         ),
