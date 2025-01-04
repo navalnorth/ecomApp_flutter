@@ -3,6 +3,7 @@
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
 import 'package:ecom_app/app/modules/ProductsPage/controller/product_page_controller.dart';
+import 'package:ecom_app/app/modules/filtre/view/filtre.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -107,8 +108,12 @@ class _ProductPageState extends State<ProductPage> {
                   ],
                 ),
                 h(20),
-                const Icon(Icons.menu, size:35,)
-
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Filtre()));
+                  },
+                  child: Icon(Icons.menu, size:35,)
+                )
               ],
             ),
             h(30),
