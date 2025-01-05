@@ -4,6 +4,7 @@ import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
 import 'package:ecom_app/app/modules/ProductsPage/controller/product_page_controller.dart';
 import 'package:ecom_app/app/modules/filtre/view/filtre.dart';
+import 'package:ecom_app/app/modules/panier/view/panier.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -49,11 +50,16 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                 ),
 
-                CircleAvatar(
-                  backgroundColor: greyColor,
-                  radius: 30,
-                  child: const Center(
-                    child: Icon(Icons.shopping_bag, size: 30,),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Panier(),));
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: greyColor,
+                    radius: 30,
+                    child: const Center(
+                      child: Icon(Icons.shopping_bag, size: 30,),
+                    ),
                   ),
                 )
               ],
