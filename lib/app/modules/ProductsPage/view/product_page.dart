@@ -1,8 +1,7 @@
-
-
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
 import 'package:ecom_app/app/modules/ProductsPage/controller/product_page_controller.dart';
+import 'package:ecom_app/app/modules/account/view/accout.dart';
 import 'package:ecom_app/app/modules/filtre/view/filtre.dart';
 import 'package:ecom_app/app/modules/panier/view/panier.dart';
 import 'package:ecom_app/utils/colors.dart';
@@ -39,7 +38,7 @@ class _ProductPageState extends State<ProductPage> {
                     color: greyColor,
                     borderRadius: BorderRadius.circular(100)
                   ),
-                  width: MediaQuery.of(context).size.width/1.4,
+                  width: MediaQuery.of(context).size.width/1.8,
                   child: TextFormField(
                     decoration: const InputDecoration(
                       suffixIcon: Icon(Icons.search, size: 30,),
@@ -59,6 +58,19 @@ class _ProductPageState extends State<ProductPage> {
                     radius: 30,
                     child: const Center(
                       child: Icon(Icons.shopping_bag, size: 30,),
+                    ),
+                  ),
+                ),
+
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Account(),));
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: greyColor,
+                    radius: 30,
+                    child: const Center(
+                      child: Icon(Icons.person, size: 30,),
                     ),
                   ),
                 )

@@ -3,6 +3,7 @@ import 'package:ecom_app/app/components/form_component.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
 import 'package:ecom_app/app/modules/checkout/controller/checkout_controller.dart';
+import 'package:ecom_app/app/modules/checkout/view/checkout2.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -26,11 +27,13 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: TextComponents(txt: "Checkout", fw: FontWeight.bold, textSize: 18, family: "Bold",),
         centerTitle: true,
       ),
+
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -128,6 +131,9 @@ class _CheckoutState extends State<Checkout> {
                 h(30),
 
                 InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Checkout2()));
+                  },
                   child: ButtonComponent(textButton: "Suivant", buttonColor: mainColor)
                 )
               ],

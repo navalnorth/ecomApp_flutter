@@ -14,7 +14,7 @@ class TextComponents extends StatelessWidget {
     required this.txt,
     this.color=Colors.black,
     this.textSize=16,
-    this.fw=FontWeight.bold,
+    this.fw=FontWeight.normal,
     this.textAlign=TextAlign.left,
     this.family="Regular"
   });

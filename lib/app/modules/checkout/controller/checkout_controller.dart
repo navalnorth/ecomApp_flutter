@@ -24,9 +24,9 @@ class ProgressBar extends StatelessWidget {
               ),
               if(index < 3) 
                 Container(
-                  height: 2,
+                  height: 3,
                   width: 50,
-                  color: homeBg,
+                  color: index < stepActuel ? mainColor : homeBg,
                 )
             ],
           );
