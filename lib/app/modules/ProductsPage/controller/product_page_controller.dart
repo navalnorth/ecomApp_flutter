@@ -1,6 +1,7 @@
 import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
+import 'package:ecom_app/app/modules/panier/view/panier.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ CategoryBox(String productPage) {
 }
 
 
-ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePromo) {
+ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePromo, BuildContext context) {
   return Card(
     color: Colors.white,
     child: Container(
@@ -75,10 +76,15 @@ ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePr
             ],
           ),
           h(10),
-          Container(
-            height: 35,
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: ButtonComponent(textButton: "Ajouter au Panier", buttonColor: mainColor)
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Panier()));
+            },
+            child: Container(
+              height: 35,
+              margin: EdgeInsets.only(left: 15, right: 15),
+              child: ButtonComponent(textButton: "Ajouter au Panier", buttonColor: mainColor)
+            ),
           )
         ],
       ),

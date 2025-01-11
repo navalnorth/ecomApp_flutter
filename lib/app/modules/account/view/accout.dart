@@ -1,6 +1,7 @@
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
 import 'package:ecom_app/app/modules/account/view/edit_profile.dart';
+import 'package:ecom_app/app/modules/account/view/notifications.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -45,9 +46,14 @@ class _AccountState extends State<Account> {
               ),
             ),
             
-            ListTile(
-              title: TextComponents(txt: "Notifications", textSize: 18,),
-              leading: Icon(Icons.notifications),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
+              },
+              child: ListTile(
+                title: TextComponents(txt: "Notifications", textSize: 18,),
+                leading: Icon(Icons.notifications),
+              ),
             ),
 
             ListTile(
