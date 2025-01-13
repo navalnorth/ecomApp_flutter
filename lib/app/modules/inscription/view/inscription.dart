@@ -13,6 +13,10 @@ class Inscription extends StatefulWidget {
 }
 
 class _InscriptionState extends State<Inscription> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController= TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,17 +39,17 @@ class _InscriptionState extends State<Inscription> {
               h(40),
               TextComponents(txt: "Email / Téléphone", textSize: 17,),
               h(10),
-              FormComponent(),
+              FormComponent(controller: emailController,),
         
               h(40),
               TextComponents(txt: "Téléphone", textSize: 17,),
               h(10),
-              FormComponent(textInputType: TextInputType.phone,),
+              FormComponent(textInputType: TextInputType.phone, controller: phoneController,),
         
               h(20),
               TextComponents(txt: "Mot de Passe", textSize: 17,),
               h(10),
-              FormComponent(hide: true, textInputType: TextInputType.visiblePassword,),
+              FormComponent(hide: true, textInputType: TextInputType.visiblePassword, controller: passwordController,),
               h(20),
         
               h(20),

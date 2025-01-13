@@ -163,12 +163,12 @@ class _ProductPageState extends State<ProductPage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                CategoryBox("T-shirt"),
-                CategoryBox("Jeans"),
-                CategoryBox("Chaussures"),
-                CategoryBox("Pyjama"),
-                CategoryBox("Manteaux"),
-                CategoryBox("Accessoires"),
+                CategoryBox("T-shirt", context, "assets/images/tshirt.png"),
+                CategoryBox("Jeans", context, "assets/images/jeans.png"),
+                CategoryBox("Chaussures", context, "assets/images/shoes.png"),
+                CategoryBox("Pyjama", context, "assets/images/pijama.jpg"),
+                CategoryBox("Robes", context, "assets/images/robe.png"),
+                CategoryBox("Bébé", context, "assets/images/baby.png"),
               ],
               ),
             ),

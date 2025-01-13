@@ -17,6 +17,8 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +47,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   TextComponents(txt: 'Email / Phone', fw: FontWeight.bold,),
                 ],
               ),
-              FormComponent(hide: false, textInputType: TextInputType.emailAddress,),
+              FormComponent(hide: false, textInputType: TextInputType.emailAddress, controller: emailController,),
               h(20),
               InkWell(
                 onTap: () {
