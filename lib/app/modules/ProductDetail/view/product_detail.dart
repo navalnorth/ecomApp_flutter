@@ -6,7 +6,14 @@ import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatefulWidget {
-  const ProductDetail({super.key});
+  final String path;
+  final String nameProductDetail;
+  
+  const ProductDetail({
+    super.key,
+    required this.path,
+    required this.nameProductDetail,
+  });
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -71,7 +78,7 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 300,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: greyColor2,
+                image: DecorationImage(image: AssetImage(widget.path), fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
@@ -92,7 +99,7 @@ class _ProductDetailState extends State<ProductDetail> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextComponents(
-                  txt: "T-shirt d'homme",
+                  txt: widget.nameProductDetail,
                   fw: FontWeight.bold,
                   textSize: 20,
                 ),
@@ -233,12 +240,15 @@ class _ProductDetailState extends State<ProductDetail> {
             ),
             h(20),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ProductBox("T-shirt", "12 avis", "15", "10", context),
-                ProductBox("Jacket", "12 avis", "30", "25", context),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ProductBox("T-shirt", "12 avis", "15", "10", context, "assets/images/welcome.png"),
+                  ProductBox("Jacket", "12 avis", "30", "25", context, "assets/images/welcome.png"),
+                ],
+              ),
             )
 
           ],

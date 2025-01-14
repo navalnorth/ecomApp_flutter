@@ -37,10 +37,10 @@ CategoryBox(String productName, BuildContext context, String path){
 }
 
 
-ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePromo, BuildContext context) {
+ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePromo, BuildContext context, String path) {
   return InkWell(
     onTap: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail(path: path, nameProductDetail: ProductName,)));
     },
     child: Card(
       color: Colors.white,
@@ -52,6 +52,7 @@ ProductBox(String ProductName, ProductReview, ProductPriceNormal, ProductPricePr
             Container(
               height: 180,
               decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(path), fit: BoxFit.cover),
                 color: greyColor,
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20),)
               ),

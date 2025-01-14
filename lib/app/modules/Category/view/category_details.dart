@@ -37,7 +37,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
               children: List.generate(6, (index) {
                 return Container(
                   width: (MediaQuery.of(context).size.width/2)-20,
-                  child: ProductBox("Panjabi", "13 reviews", "30€", "40€", context),
+                  child: ProductBox("Panjabi", "13 reviews", "30€", "40€", context,'assets/images/welcome.png'),
                 );
               }),
             )

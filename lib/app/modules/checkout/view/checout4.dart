@@ -16,6 +16,8 @@ class Checkout4 extends StatefulWidget {
 }
 
 class _Checkout4State extends State<Checkout4> {
+  TextEditingController accountNumberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +75,7 @@ class _Checkout4State extends State<Checkout4> {
                 FocusScope.of(context).unfocus();
               },
               child: TextField(
+                controller: accountNumberController,
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),

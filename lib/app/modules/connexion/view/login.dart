@@ -2,6 +2,7 @@ import 'package:ecom_app/app/components/button_components.dart';
 import 'package:ecom_app/app/components/form_component.dart';
 import 'package:ecom_app/app/components/space.dart';
 import 'package:ecom_app/app/components/text_components.dart';
+import 'package:ecom_app/app/modules/inscription/view/inscription.dart';
 import 'package:ecom_app/app/modules/motDePasseOublie/view/forgot_password.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -115,12 +116,18 @@ class _LoginState extends State<Login> {
                   )
                 ],
               ),
+              h(10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextComponents(txt: "Pas de compte ?", fw: FontWeight.bold,),
                   w(10),
-                  TextComponents(txt: "S'inscrire", color: mainColor, fw: FontWeight.bold,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Inscription()));
+                    },
+                    child: TextComponents(txt: "S'inscrire", color: mainColor, fw: FontWeight.bold,)
+                  ),
                 ],
               )
             ],

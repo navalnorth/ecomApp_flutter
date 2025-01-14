@@ -23,6 +23,10 @@ class _CheckoutState extends State<Checkout> {
   List<String> ditrict= ['Nord', 'Pas-de-Calais', "Somme"];
   String selectDistrict = 'Nord';
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController postalController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +59,7 @@ class _CheckoutState extends State<Checkout> {
               children: [
                 TextComponents(txt: "Prénom"),
                 h(10),
-                FormComponent(textInputType: TextInputType.name,),
+                FormComponent(textInputType: TextInputType.name, controller: nameController,),
                 h(30),
 
                 TextComponents(txt: "Ville"),
@@ -91,7 +95,7 @@ class _CheckoutState extends State<Checkout> {
 
                 TextComponents(txt: "Code Postale"),
                 h(10),
-                FormComponent(textInputType: TextInputType.number,),
+                FormComponent(textInputType: TextInputType.number, controller: postalController,),
                 h(30),
 
                 TextComponents(txt: "Département"),
@@ -127,7 +131,7 @@ class _CheckoutState extends State<Checkout> {
 
                 TextComponents(txt: "Téléphone"),
                 h(10),
-                FormComponent(textInputType: TextInputType.number,),
+                FormComponent(textInputType: TextInputType.number, controller: phoneController,),
                 h(30),
 
                 InkWell(

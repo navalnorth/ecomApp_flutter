@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
               h(20),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProductPage()));
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => ProductPage(),), (route) => false);
                 },
                 child: TextComponents(txt: "Non Merci")
               )

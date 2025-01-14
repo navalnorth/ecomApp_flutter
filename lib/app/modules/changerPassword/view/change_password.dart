@@ -62,6 +62,10 @@ class _ChangePasswordState extends State<ChangePassword> {
                       content: TextComponents(txt: "Les Mot de Passes doivent être identiques", color: Colors.white,)
                     ));
                   } else {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    backgroundColor: Colors.green,
+                    content: TextComponents(txt: "Mot de passe réinitialisé avec succès", color: Colors.white,)
+                  ));
                   Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeState()));
                   }
                 },

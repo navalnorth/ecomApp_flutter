@@ -15,6 +15,18 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  TextEditingController searchController = TextEditingController();
+
+  List<String> productname = ["T-shirt", "Jeans", "Robe", "Chaussures", "Pulls", "Pyjama"];
+  List<String> productPath = [
+    "assets/images/prdouctshirt.jpg",
+    "assets/images/productjean.jpg",
+    "assets/images/productrobe.jpg",
+    "assets/images/productchaussure.jpg",
+    "assets/images/productpul.jpg",
+    "assets/images/productpyjama.jpg",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +52,7 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   width: MediaQuery.of(context).size.width/1.8,
                   child: TextFormField(
+                    controller: searchController,
                     decoration: const InputDecoration(
                       suffixIcon: Icon(Icons.search, size: 30,),
                       hintText: 'Cherchez votre produit',
@@ -188,7 +201,7 @@ class _ProductPageState extends State<ProductPage> {
               children: List.generate(6, (index) {
                 return Container(
                   width: (MediaQuery.of(context).size.width/2)-20,
-                  child: ProductBox("Panjabi", "13 reviews", "30€", "40€", context),
+                  child: ProductBox(productname[index], "13 reviews", "30€", "40€", context, productPath[index]),
                 );
               }),
             )
